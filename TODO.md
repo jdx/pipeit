@@ -1,15 +1,43 @@
-TODO
-====
+h1. pipeit.io
 
-Critical
---------
+This is the magic behind "pipeit.io":http://pipeit.io.
+
+h2. Dependencies
+
+* "node.js":http://nodejs.org/
+* "NPM":http://npmjs.org/
+* "redis":http://redis.io/
+* supervisor `npm install supervisor -g` (For code-reloading)
+
+h2. How to run the application
+
+Clone the git repo
+
+bc. git clone git@github.com:dickeytk/pipeit.git
+
+Install dependencies
+
+bc. npm install
+
+Start the server
+
+bc. node web.js
+
+or
+
+bc. supervisor web.js
+
+For code reloading.
+
+h1. TODO
+
+h2. Need
 * Get Jade working
 * Get drag + drop working
 * Implement server side file upload
 * Hook up client side to read down file http://elegantcode.com/2011/04/06/taking-baby-steps-with-node-js-pumping-data-between-streams/
 
-Good
-----
+h2. Should
 * Write site copy
 * Write about us page
 * Install the things below:
