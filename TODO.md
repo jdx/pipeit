@@ -1,6 +1,19 @@
 TODO
 ====
 
+Critical
+--------
+* Get Jade working
+* Get drag + drop working
+* Implement server side file upload
+* Hook up client side to read down file http://elegantcode.com/2011/04/06/taking-baby-steps-with-node-js-pumping-data-between-streams/
+
+Good
+----
+* Write site copy
+* Write about us page
+* Install the things below:
+
 Install Google Analytics code:
 
     <script type="text/javascript">
