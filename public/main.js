@@ -1,4 +1,6 @@
-BLOB_SIZE = 128;
+BLOB_SIZE = 1024;
+
+var socket = io.connect('/');
 
 $(document).ready(function() {
     $.event.props.push('dataTransfer');
@@ -28,21 +30,23 @@ $(document).ready(function() {
         // Fired after each blob
         fileReader.onload = (function(file) {
             return function(e) {
-                // just print to console for now
-                console.log(e.target.result);
+
+                // Send the packet up
+                socket.emit('upload', e.target.result, function() {
+                  // If the file isn't done
+                  if (e.loaded != 0) {
+                      // Get the next blob
+                      var blob = file.webkitSlice(position, position + BLOB_SIZE);
+                      fileReader.readAsBinaryString(blob);
+                  }
+                });
 
                 // Update the current position in the file
                 position = position + e.loaded;
 
-                // Update progress diablog
-                $('#progress').text(Math.round((position / file.size) * 100) + '%');
-
-                // If the file isn't done
-                if (e.loaded != 0) {
-                    // Get the next blob
-                    var blob = file.webkitSlice(position, position + BLOB_SIZE);
-                    fileReader.readAsText(blob);
-                }
+                // Update progress dialog
+                var progress = Math.round((position / file.size) * 100);
+                $('#progress').text(Math.round(progress) + '%');
             };
         })(file);
     });

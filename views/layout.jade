@@ -4,6 +4,7 @@ html(lang="en")
     title Pipe It!
     link(href='main.css', rel='stylesheet', type='text/css')
     script(src='jquery-1.7.1.min.js')
+    script(src='/socket.io/socket.io.js')
     script(src='main.js')
     script(type='text/javascript')
       // Google Analytics
@@ -22,5 +23,6 @@ html(lang="en")
         p Woo content!
         #dropbox Drop files here!
         #progress 0%
+        <a href="/download">Download</a>
     #footer
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pipeit.io" data-text="pipeit.io: Send your files over the series of tubes! via @dickeytk @whatgoodisaroad" data-count="horizontal" data-related="dickeytk:whatgoodisaroad">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
